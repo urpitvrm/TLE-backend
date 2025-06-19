@@ -21,6 +21,9 @@ const startReminderJob = require("./jobs/sendReminders");
 // Enable middlewares
 app.use(cors());
 app.use(express.json());
+app.use("/", (req, res) => {
+  res.send("Hello from the root route");
+});
 
 // Routes
 app.use("/api/students", studentRoutes);
